@@ -1,48 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="css/flexbox.css?version=8.2">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Profile</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Times New Roman', serif; /* Matching the default serif look */
+            margin: 0;
+            padding: 20px;
+            background-color: #fcfcfc; /* Near white background */
+            color: #000;
+        }
+
+        /* Header */
+        .page-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Profile Layout Container (Flexbox) */
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            width: 100%;
+            max-width: 1000px; /* Optional: Sets a max width for the content area */
+        }
+
+        /* Styling for all information boxes */
+        .info-box {
+            background-color: #f5b8b8; /* Light reddish-pink color */
+            border: 1px solid #e08080; /* Subtle border for definition */
+            padding: 15px;
+            margin-right: 1px; /* Minimal gap between boxes */
+            margin-bottom: 1px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            min-height: 100px; /* Ensures minimum height, like the 'About Me' box */
+        }
+
+        /* Responsive Widths for Boxes */
+
+        /* Default layout for desktop/wider screens (5 boxes in the first row) */
+        .info-box.about,
+        .info-box.name,
+        .info-box.education,
+        .info-box.experience,
+        .info-box.hobbies {
+            /* 20% width minus a tiny fraction for margin to ensure 5 fit perfectly on one line */
+            width: calc(20% - 1px); 
+        }
+
+        /* Goals box is wider, spanning about two columns */
+        .info-box.goals {
+            width: calc(40% - 1px); 
+            min-height: 80px; /* Slightly different height for the second row */
+            /* Clear the margin on the left since it starts a new line */
+            margin-left: 0;
+        }
+
+        /* Mobile Adjustments: Stack all boxes for small screens */
+        @media (max-width: 600px) {
+            .info-box {
+                width: 100% !important; /* Forces all boxes to full width on mobile */
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            .profile-container {
+                display: block; /* Change to block layout on mobile for better stacking */
+            }
+        }
+
+        /* Image and Caption Section */
+        .caption {
+            font-size: 0.7rem;
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .profile-photo {
+            /* This is a placeholder for the actual image, using a placeholder service */
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>My Personal Profile Web Page</h1>
 
-    <div class="container">
-        <div>
-            <strong>About Me</strong><br>
-        </div>
+    <h1 class="page-title">My Personal Profile Web page</h1>
 
-        <div>
-            Name: Dela Cruz, Raniel Q.<br>
-        </div>
+    <div class="profile-container">
+        <!-- Row 1 - 5 Boxes -->
+        <div class="info-box about">About Me</div>
+        <div class="info-box name">Name: Dela Cruz, Raniel Q.</div>
+        <div class="info-box education">Education: Currently taking Bachelors Degree in Information Technology in Asia Pacific College</div>
+        <div class="info-box experience">IT Experience: ResQtag Pet Qr code project</div>
+        <div class="info-box hobbies">Hobbies & Interests: Ride Therapy and playing online games</div>
 
-        <div>
-            Education: Asia Pacific College<br>
-        </div>
-
-        <div>
-            <strong>IT Experience:</strong><br>
-            Pet Resqtag QR Code Project<br>
-            BorrowIT System<br>
-        </div>
-
-        <div>
-            <strong>Hobbies & Interests:</strong><br>
-            Watching movies<br>
-            Playing games<br>
-            Listening to music<br>
-        </div>
-
-        <div>
-            <strong>Goals / Dream in Life:</strong><br>
-            To build my own tech-related business<br>
-            To support my family and achieve a stable career<br>
-        </div>
-
-        <div>
-            <strong>Photo of My Granny:</strong><br>
-            <img src="images/granny.jpg" alt="Photo of my granny" width="250">
-        </div>
+        <!-- Row 2 - Goals Box -->
+        <div class="info-box goals">Goals In Life / Dream: To become a Police man</div>
     </div>
+
+    <p class="caption">Sipag lang kaya mo yan</p>
+
+    <!-- The actual image element -->
+    <img 
+        class="profile-photo" 
+        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG" 
+        alt="Profile Picture"
+        onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG'" 
+    >
 
 </body>
 </html>
