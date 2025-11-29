@@ -4,3 +4,18 @@ img {
   margin-right: auto;
   width: 40%;
 }
+body {
+  background-color: greenyellow;
+  text-align: center;
+}
+h1 {
+  color:blue
+}
+
+p {
+  text-align: center;
+}
+
+img {
+  text-align: center;
+}
