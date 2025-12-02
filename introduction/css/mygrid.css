@@ -29,7 +29,7 @@ h1 {
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
 }
 
-/* ---- GRID ---- */
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
