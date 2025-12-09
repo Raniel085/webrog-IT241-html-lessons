@@ -8,26 +8,59 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
+    /* Beautiful gradient background */
     body {
-      background-color: #f5f5f5;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      font-family: "Poppins", sans-serif;
     }
-    .section-title {
-      font-weight: 600;
-      font-size: 1.6rem;
-      margin-top: 25px;
+
+    /* Top title section */
+    .hero {
+      background: linear-gradient(145deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     }
+
+    /* Profile image */
     .profile-img {
       width: 100%;
-      max-width: 450px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      max-width: 260px;
+      border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+
+    /* Information box (cards) */
     .info-box {
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.93);
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      backdrop-filter: blur(5px);
+      transition: 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+    }
+
+    .section-title {
+      font-weight: 700;
+      color: #333;
+      border-left: 6px solid #6a11cb;
+      padding-left: 12px;
+      margin-bottom: 15px;
+    }
+
+    ul li {
+      padding: 5px 0;
+      font-size: 1.05rem;
     }
   </style>
 </head>
@@ -36,9 +69,14 @@
 
 <div class="container mt-4">
 
-  <h1 class="text-center mb-4">My Personal Profile Web Page</h1>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>My Personal Profile Web Page</h1>
+    <p style="font-size: 1.2rem;">Welcome to my elegant and modern personal portfolio</p>
+  </div>
 
-  <div class="row justify-content-center">
+  <!-- Profile Image -->
+  <div class="row justify-content-center mb-4">
     <div class="col-md-4 text-center">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG" 
            alt="Profile Photo" class="profile-img">
@@ -49,9 +87,9 @@
   <div class="info-box">
     <h2 class="section-title">About Me</h2>
     <p>
-      Hello! I am Raniel Q. Dela Cruz, a dedicated BSIT student who works during the day 
-      and studies at night. I enjoy creating UI/UX designs, learning new technologies, and 
-      improving my programming skills.
+      Hello! I am <strong>Raniel Q. Dela Cruz</strong>, a dedicated BSIT student who works during 
+      the day and studies at night. I enjoy creating UI/UX designs, learning new technologies, 
+      and improving my programming skills. I am passionate, hardworking, and always eager to grow.
     </p>
   </div>
 
@@ -84,35 +122,12 @@
   </div>
 
   <!-- Goals -->
-  <div class="info-box">
+  <div class="info-box mb-5">
     <h2 class="section-title">Goals in Life / Dream</h2>
     <p>
-      My dream is to become a Police Officer or a Soldier. I want to serve and protect my community.
+      My dream is to become a <strong>Police Officer</strong> or a <strong>Soldier</strong>. 
+      I want to serve and protect my community, and make a meaningful impact in the world.
     </p>
-  </div>
-
-  <!-- Bootstrap Sample Layout -->
-  <div class="mt-5">
-    <h2 class="section-title">Responsive Auto Layout Columns (Bootstrap 5 Sample)</h2>
-    <p>These are sample responsive layouts using <code>.col-md</code> classes.</p>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md bg-primary text-white p-3">1 of 2</div>
-        <div class="col-md bg-dark text-white p-3">2 of 2</div>
-      </div>  
-    </div>
-
-    <br>
-
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md bg-primary text-white p-3">1 of 4</div>
-        <div class="col-md bg-dark text-white p-3">2 of 4</div>
-        <div class="col-md bg-primary text-white p-3">3 of 4</div>
-        <div class="col-md bg-dark text-white p-3">4 of 4</div>
-      </div>  
-    </div>
   </div>
 
 </div>
