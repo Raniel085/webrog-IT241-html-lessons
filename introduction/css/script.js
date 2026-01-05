@@ -4,7 +4,7 @@ window.onload = function() {
     const greetingElement = document.getElementById('dynamic-greeting');
     
     // Set a static professional message
-    let message = "Welcome to my Personal Website // Information Technology";
+    let message = "Welcome to my Personal Website  Information Technology";
 
     // Update the HTML
     if (greetingElement) {
