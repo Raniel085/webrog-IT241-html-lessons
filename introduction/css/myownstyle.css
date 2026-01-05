@@ -1,21 +1,171 @@
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-}
-body {
-  background-color: greenyellow;
-  text-align: center;
-}
-h1 {
-  color:blue
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Webprog IT241 - Raniel Dela Cruz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-p {
-  text-align: center;
-}
+  <style>
+    /* APPLYING YOUR REQUESTED TEXT STYLES */
+    body {
+      background: linear-gradient(to bottom right, #89f7fe, #66a6ff);
+      font-family: Georgia, serif; /* Applied Georgia */
+      font-size: 20px;             /* Applied 20px */
+      letter-spacing: 2px;        /* Applied 2px spacing */
+      word-spacing: 2px;
+      color: #000000;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
+      min-height: 100vh;
+    }
 
-img {
-  text-align: center;
-}
+    /* HEADER */
+    .hero {
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
+      padding: 60px 20px;
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* PROFILE CARD */
+    .profile-card {
+      text-align: center;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      max-width: 500px; /* Increased slightly for larger font */
+      margin: auto;
+      position: relative;
+    }
+
+    .profile-img {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      object-fit: cover;
+    }
+
+    /* CONTENT BOXES */
+    .info-box {
+      background: rgba(255,255,255,0.95);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: 0.3s ease;
+      height: 100%;
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      border-left: 6px solid #6a11cb;
+      padding-left: 12px;
+      cursor: pointer; /* Indicates it is clickable for JS */
+      transition: color 0.3s ease;
+    }
+
+    .icon {
+      color: #6a11cb;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container mt-4 pb-5">
+
+  <div class="hero">
+    <h1 style="font-family: Georgia, serif;">My Personal Profile</h1>
+    <p>Click the section titles to change their color!</p>
+  </div>
+
+  <div class="profile-card mb-5">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG" class="profile-img" alt="Profile Photo">
+    <h2 class="mt-3">Raniel Q. Dela Cruz</h2>
+    <p>
+      Hello! I'm learning new things in technology and improving my skills. I work hard, stay motivated, and always try my best to reach my goals.
+    </p>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="info-box">
+        <h3 class="section-title"><i class="fa-solid fa-graduation-cap icon"></i>Education</h3>
+        <ul>
+          <li>Asia Pacific College</li>
+          <li>BS IT</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="info-box">
+        <h3 class="section-title"><i class="fa-solid fa-computer icon"></i>IT Experience</h3>
+        <ul>
+          <li>LinkedIn Learning</li>
+          <li>Python</li>
+          <li>Basic Skills</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="info-box">
+        <h3 class="section-title"><i class="fa-solid fa-heart icon"></i>Hobbies</h3>
+        <ul>
+          <li>Driving</li>
+          <li>Playing Games</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-box mt-4">
+    <h3 class="section-title"><i class="fa-solid fa-bullseye icon"></i>Goals in Life</h3>
+    <p>
+      My dream is to become a <strong>Police Officer</strong> or a <strong>Soldier</strong>.
+      I want to serve and protect my community and make a meaningful impact.
+    </p>
+  </div>
+
+</div>
+
+<script>
+  // Select all section titles
+  const titles = document.querySelectorAll('.section-title');
+
+  titles.forEach(title => {
+    title.addEventListener('click', function() {
+      // Generate a random hex color
+      const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      // Apply to text and border
+      this.style.color = randomColor;
+      this.style.borderLeftColor = randomColor;
+      
+      // Also change the icon color inside that title
+      const icon = this.querySelector('.icon');
+      if(icon) icon.style.color = randomColor;
+    });
+  });
+</script>
+
+</body>
+</html>
