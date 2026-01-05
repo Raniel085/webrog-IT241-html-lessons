@@ -9,10 +9,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* APPLYING YOUR REQUESTED TEXT STYLES */
     body {
       background: linear-gradient(to bottom right, #89f7fe, #66a6ff);
-      font-family: 'Poppins', sans-serif;
-      color: #333;
+      font-family: Georgia, serif; /* Applied Georgia */
+      font-size: 20px;             /* Applied 20px */
+      letter-spacing: 2px;        /* Applied 2px spacing */
+      word-spacing: 2px;
+      color: #000000;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
+      min-height: 100vh;
     }
 
     /* HEADER */
@@ -33,26 +43,9 @@
       padding: 25px;
       border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-      max-width: 400px;
+      max-width: 500px; /* Increased slightly for larger font */
       margin: auto;
-      border: 5px solid transparent;
-      background-clip: padding-box;
       position: relative;
-    }
-
-    .profile-card:before {
-      content: "";
-      position: absolute;
-      top: -5px; left: -5px; right: -5px; bottom: -5px;
-      background: linear-gradient(135deg, #6a11cb, #ff8dc7, #2575fc);
-      border-radius: 25px;
-      z-index: -1;
-      animation: glow 5s infinite alternate;
-    }
-
-    @keyframes glow {
-      0% { opacity: 0.4; }
-      100% { opacity: 1; }
     }
 
     .profile-img {
@@ -61,6 +54,7 @@
       border-radius: 50%;
       border: 6px solid white;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      object-fit: cover;
     }
 
     /* CONTENT BOXES */
@@ -70,6 +64,7 @@
       border-radius: 15px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
       transition: 0.3s ease;
+      height: 100%;
     }
 
     .info-box:hover {
@@ -82,9 +77,10 @@
       margin-bottom: 15px;
       border-left: 6px solid #6a11cb;
       padding-left: 12px;
+      cursor: pointer; /* Indicates it is clickable for JS */
+      transition: color 0.3s ease;
     }
 
-    /* ICON STYLE */
     .icon {
       color: #6a11cb;
       margin-right: 8px;
@@ -94,53 +90,46 @@
 
 <body>
 
-<div class="container mt-4">
+<div class="container mt-4 pb-5">
 
-  <!-- HEADER -->
   <div class="hero">
-    <h1>My Personal Profile</h1>
-    <p></p>
+    <h1 style="font-family: Georgia, serif;">My Personal Profile</h1>
+    <p>Click the section titles to change their color!</p>
   </div>
 
-  <!-- PROFILE CARD -->
   <div class="profile-card mb-5">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG" class="profile-img" alt="Profile Photo">
     <h2 class="mt-3">Raniel Q. Dela Cruz</h2>
-    <p style="font-size: 1rem;">
+    <p>
       Hello! I'm learning new things in technology and improving my skills. I work hard, stay motivated, and always try my best to reach my goals.
     </p>
   </div>
 
-  <!-- 3 COLUMN SECTIONS -->
   <div class="row g-4">
-
-    <!-- Education -->
     <div class="col-md-4">
       <div class="info-box">
         <h3 class="section-title"><i class="fa-solid fa-graduation-cap icon"></i>Education</h3>
         <ul>
           <li>Asia Pacific College</li>
-          <li>Bachelor of Science in Information Technology</li>
+          <li>BS IT</li>
         </ul>
       </div>
     </div>
 
-    <!-- IT Experience -->
     <div class="col-md-4">
       <div class="info-box">
         <h3 class="section-title"><i class="fa-solid fa-computer icon"></i>IT Experience</h3>
         <ul>
           <li>LinkedIn Learning</li>
-          <li>Python Programming</li>
-          <li>Basic Computer Skills</li>
+          <li>Python</li>
+          <li>Basic Skills</li>
         </ul>
       </div>
     </div>
 
-    <!-- Hobbies -->
     <div class="col-md-4">
       <div class="info-box">
-        <h3 class="section-title"><i class="fa-solid fa-heart icon"></i>Hobbies & Interests</h3>
+        <h3 class="section-title"><i class="fa-solid fa-heart icon"></i>Hobbies</h3>
         <ul>
           <li>Driving</li>
           <li>Playing Games</li>
@@ -149,8 +138,7 @@
     </div>
   </div>
 
-  <!-- Goals -->
-  <div class="info-box mt-4 mb-5">
+  <div class="info-box mt-4">
     <h3 class="section-title"><i class="fa-solid fa-bullseye icon"></i>Goals in Life</h3>
     <p>
       My dream is to become a <strong>Police Officer</strong> or a <strong>Soldier</strong>.
@@ -160,20 +148,24 @@
 
 </div>
 
-</body>
-</html>
+<script>
+  // Select all section titles
+  const titles = document.querySelectorAll('.section-title');
 
+  titles.forEach(title => {
+    title.addEventListener('click', function() {
+      // Generate a random hex color
+      const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      // Apply to text and border
+      this.style.color = randomColor;
+      this.style.borderLeftColor = randomColor;
+      
+      // Also change the icon color inside that title
+      const icon = this.querySelector('.icon');
+      if(icon) icon.style.color = randomColor;
+    });
+  });
+</script>
 
-</div>
-<h2>Demo External JavaScript</h2>
- 
-<p id="demo">A Paragraph.</p>
- 
-<button type="button" onclick="myFunction()">Try it</button>
- 
-<p>This example links to "myScript.js".</p>
-<p>(myFunction is stored in "myScript.js")</p>
- 
-<script src="js/myScript.js"></script>
 </body>
 </html>
